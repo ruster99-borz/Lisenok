@@ -370,26 +370,6 @@ modal.onclick=e=>{if(e.target===modal)modal.classList.remove('show')};
 </script>
 
 <script>
-const reveals=document.querySelectorAll('.reveal');
-const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.12});
-reveals.forEach(x=>obs.observe(x));
-window.addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight;document.getElementById('progress').style.width=(scrollY/h*100)+'%'});
-
-const audio=document.getElementById('audio'), musicBtn=document.getElementById('musicBtn');
-musicBtn.onclick=async()=>{try{if(audio.paused){await audio.play();musicBtn.textContent='❚❚'}else{audio.pause();musicBtn.textContent='♫'}}catch(e){}};
-
-setInterval(()=>{
- const h=document.createElement('div');h.className='floatheart';h.textContent=['♡','♥','❤'][Math.floor(Math.random()*3)];
- h.style.left=Math.random()*100+'%';h.style.fontSize=(12+Math.random()*20)+'px';h.style.animationDuration=(7+Math.random()*5)+'s';
- document.body.appendChild(h);setTimeout(()=>h.remove(),13000);
-},900);
-
-const modal=document.getElementById('modal'), modalImg=document.getElementById('modalImg');
-document.querySelectorAll('.gallery img').forEach(img=>img.onclick=()=>{modalImg.src=img.src;modal.classList.add('show')});
-document.getElementById('close').onclick=()=>modal.classList.remove('show');
-modal.onclick=e=>{if(e.target===modal)modal.classList.remove('show')};
-</script>
-<script>
 (function(){
  const hint=document.getElementById('musicHint'), audio=document.getElementById('audio'), btn=document.getElementById('musicBtn');
  if(btn&&audio){
