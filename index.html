@@ -470,6 +470,34 @@ document.getElementById('close').onclick=()=>modal.classList.remove('show');
 modal.onclick=e=>{if(e.target===modal)modal.classList.remove('show')};
 </script>
 
+<script>
+(function(){
+ const hint=document.getElementById('musicHint'), audio=document.getElementById('audio'), btn=document.getElementById('musicBtn');
+ if(btn&&audio){
+   btn.onclick=async()=>{
+    try{
+     if(audio.paused){await audio.play();btn.textContent='❚❚';if(hint)hint.style.display='none'}
+     else{audio.pause();btn.textContent='♫'}
+    }catch(e){}
+   };
+ }
+ document.querySelectorAll('.reveal').forEach(x=>x.classList.add('on'));
+ const bar=document.getElementById('progress');
+ if(bar) window.addEventListener('scroll',()=>{const max=document.documentElement.scrollHeight-innerHeight;bar.style.width=(max?scrollY/max*100:0)+'%'});
+ setInterval(()=>{
+   const h=document.createElement('div');
+   h.className='floatheart';
+   h.textContent=['♡','♥','❤'][Math.floor(Math.random()*3)];
+   h.style.left=(4+Math.random()*92)+'%';
+   h.style.fontSize=(12+Math.random()*20)+'px';
+   h.style.setProperty('--drift',(Math.random()*100-50)+'px');
+   h.style.animationDuration=(7+Math.random()*5)+'s';
+   document.body.appendChild(h);
+   setTimeout(()=>h.remove(),14000);
+ },1100);
+})();
+</script>
+
 
 <script>
 (function(){
