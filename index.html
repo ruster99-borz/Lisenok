@@ -112,6 +112,33 @@ p{line-height:1.78}.eyebrow{text-transform:uppercase;letter-spacing:.22em;font-s
  .p-a{margin-top:30px}.p-c{margin-top:45px}
  .extra-polaroid figcaption{font-size:14px}
 }
+.p-d{
+  transform:rotate(-3deg);
+  margin-top:20px;
+  z-index:3;
+}
+
+@media(max-width:650px){
+  .polaroid-row{
+    flex-wrap:wrap;
+    min-height:auto;
+    padding-bottom:20px;
+  }
+
+  .extra-polaroid{
+    width:46%;
+    margin-top:20px;
+  }
+
+  .extra-polaroid img{
+    height:220px;
+  }
+
+  .p-a{transform:rotate(-4deg);margin-top:20px}
+  .p-b{transform:rotate(3deg);margin-top:5px}
+  .p-c{transform:rotate(3deg);margin-top:15px}
+  .p-d{transform:rotate(-3deg);margin-top:5px}
+}
 </style>
 
 <style>
