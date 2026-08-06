@@ -543,16 +543,4 @@ modal.onclick=e=>{if(e.target===modal)modal.classList.remove('show')};
 })();
 </script>
 
-<script>
-(function(){
-  var b=document.getElementById('togetherBtn');
-  if(!b) return;
-  function go(e){
-    e.preventDefault();
-    var target=document.getElementById('together');
-    if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
-  }
-  b.addEventListener('click',go,false);
-})();
-</script>
 </body></html>
