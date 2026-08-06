@@ -97,20 +97,92 @@ p{line-height:1.78}.eyebrow{text-transform:uppercase;letter-spacing:.22em;font-s
 .little-closing{text-align:center;padding:48px 20px 0}
 .little-closing p{font-family:"Playfair Display",Georgia,serif;font-size:clamp(25px,5vw,38px);line-height:1.35;color:#735d65;margin:0}
 .polaroids-extra{background:#f5edee;padding:95px 20px 105px;overflow:hidden}
-.polaroid-row{display:flex;justify-content:center;align-items:flex-start;gap:20px;min-height:470px;padding:20px 0}
-.extra-polaroid{margin:0;background:#fff;padding:10px 10px 18px;width:31%;box-shadow:0 16px 42px #60434a20}
-.extra-polaroid img{display:block;width:100%;height:310px;object-fit:cover}
-.extra-polaroid figcaption{text-align:center;font-family:"Playfair Display",Georgia,serif;font-size:17px;color:#75656b;margin-top:12px}
-.p-a{transform:rotate(-4deg);margin-top:35px}.p-b{transform:rotate(2deg);z-index:2}.p-c{transform:rotate(4deg);margin-top:55px}
-.polaroid-note{text-align:center;color:#806d75;font-size:14px;margin:8px auto 0;line-height:1.7}
+.polaroid-row{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  align-items:start;
+  min-height:auto;
+  padding:25px 5px 40px;
+}
+
+.extra-polaroid{
+  width:100%;
+  margin:0;
+  padding:7px 7px 12px;
+  background:#fff;
+  box-shadow:0 12px 30px #60434a20;
+}
+
+.extra-polaroid img{
+  display:block;
+  width:100%;
+  height:300px;
+  object-fit:cover;
+}
+
+.extra-polaroid figcaption{
+  text-align:center;
+  font-family:"Playfair Display",Georgia,serif;
+  font-size:17px;
+  color:#75656b;
+  margin-top:10px;
+  line-height:1.2;
+}
+
+.p-a{transform:rotate(-4deg)}
+.p-b{transform:rotate(2deg);z-index:2}
+.p-c{transform:rotate(4deg)}
+
+.p-d{
+  grid-column:2;
+  transform:rotate(-3deg);
+  margin-top:10px;
+  z-index:3;
+}
+
+.polaroid-note{
+  text-align:center;
+  color:#806d75;
+  font-size:14px;
+  margin:8px auto 0;
+  line-height:1.7;
+}
+
 @media(max-width:650px){
- .little-grid{grid-template-columns:1fr}
- .little-card p{font-size:20px}
- .polaroid-row{min-height:420px;gap:5px}
- .extra-polaroid{width:42%;padding:7px 7px 13px}
- .extra-polaroid img{height:235px}
- .p-a{margin-top:30px}.p-c{margin-top:45px}
- .extra-polaroid figcaption{font-size:14px}
+
+  .little-grid{
+    grid-template-columns:1fr;
+  }
+
+  .little-card p{
+    font-size:20px;
+  }
+
+  .polaroid-row{
+    grid-template-columns:repeat(3,1fr);
+    gap:6px;
+    padding:20px 2px 35px;
+  }
+
+  .extra-polaroid{
+    width:100%;
+    padding:5px 5px 9px;
+  }
+
+  .extra-polaroid img{
+    height:125px;
+  }
+
+  .extra-polaroid figcaption{
+    font-size:10px;
+    margin-top:6px;
+  }
+
+  .p-d{
+    grid-column:2;
+    margin-top:8px;
+  }
 }
 </style>
 
